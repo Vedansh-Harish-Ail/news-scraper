@@ -11,8 +11,14 @@ import io
 import csv
 import base64
 
+import os
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
+
 # ========= CONFIG ========= #
-NEWS_API_KEY  = "d93f00d1ba62485babf1ff41cc5b1fbb"
+NEWS_API_KEY  = os.getenv("NEWS_API_KEY")
 NEWS_API_BASE = "https://newsapi.org/v2"
 API_HEADERS   = {"X-Api-Key": NEWS_API_KEY}
 

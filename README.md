@@ -32,9 +32,9 @@ python -m textblob.download_corpora
 ```
 
 ### 4. Configure & Run
-Open `app.py` and enter your API key:
-```python
-NEWS_API_KEY = "your_api_key_here"
+Create a `.env` file in the root directory (based on `.env.example`) and add your key:
+```env
+NEWS_API_KEY=your_api_key_here
 ```
 Run the application:
 ```bash
