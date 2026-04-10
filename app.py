@@ -17,6 +17,12 @@ from dotenv import load_dotenv
 # Load environment variables from .env file
 load_dotenv()
 
+# Download NLTK data for TextBlob (required for Render)
+import nltk
+nltk.download('punkt', quiet=True)
+nltk.download('brown', quiet=True)
+nltk.download('punkt_tab', quiet=True)
+
 # ========= CONFIG ========= #
 NEWS_API_KEY  = os.getenv("NEWS_API_KEY")
 NEWS_API_BASE = "https://newsapi.org/v2"
@@ -376,4 +382,6 @@ def main():
 
 
 if __name__ == "__main__":
-    start_server(main, port=8080, debug=True)
+    import os
+    port = int(os.environ.get("PORT", 8080))
+    start_server(main, port=port, debug=False)

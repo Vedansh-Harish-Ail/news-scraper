@@ -1,0 +1,6 @@
+pywebio
+requests
+textblob
+python-dotenv
+nltk
+gunicorn
